@@ -18,8 +18,16 @@
     <div id="root"></div>    
 
     <script  type="text/babel">
+
+     function handleDismiss(){
+
+        alert("closed event called")
+
+     }
+
+
       ReactDOM.render(
-        <Alert bStyle="dark" dismiss>  This is a primary alert—check it out! </Alert> ,
+        <Alert bStyle="dark"  onDismiss={handleDismiss} dismiss>  This is a primary alert—check it out! </Alert> ,
         document.getElementById('root')
       );
 

@@ -6,6 +6,7 @@ Props List
 
 @bStyle : primary | secondary | success | danger | warning | info | light | dark
 @dismiss : Boolnean - Default False   
+@onDismiss : Function - This event is fired when the alert has been closed (will wait for CSS transitions to complete).
 
 Example : 
 
@@ -26,9 +27,22 @@ class Alert extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    
+    const { onDismiss } =  this.props;
+
+    $('.alert').off('closed.bs.alert').on('closed.bs.alert', function () {
+      
+      if(typeof onDismiss == "function") {
+        onDismiss();
+      } 
+
+    });
+  }
+
   render() {  
 
-    const { bStyle,dismiss,children } =  this.props;
+    const { bStyle,dismiss,children,onDismiss } =  this.props;
 
     const dismissFlag =  (dismiss) ? true :false;
 
