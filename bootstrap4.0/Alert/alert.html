@@ -9,38 +9,15 @@
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+    <script src="alert.js" type="text/babel"></script>  
+
   </head>
   <body>
 
     <div id="root"></div>    
 
     <script  type="text/babel">
-
-      class Alert extends React.Component {
-
-        constructor(props) {
-          super(props);
-        }
-
-        render() {  
-
-          const { bStyle,dismiss,children } =  this.props;
-
-          const dismissFlag =  (dismiss) ? true :false;
-
-          return  <div className= {"alert alert-" + bStyle} role="alert">            
-                    {children}
-
-                    {dismissFlag  && 
-                      <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    }
-
-                  </div>;
-        }
-      }
-
       ReactDOM.render(
         <Alert bStyle="dark" dismiss>  This is a primary alert—check it out! </Alert> ,
         document.getElementById('root')
