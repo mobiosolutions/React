@@ -8,7 +8,7 @@ Props List
 @bPill  : Boolnean - Default False
 .badge-pill modifier class to make badges more rounded (with a larger border-radius and additional horizontal padding).
 
-@bLink : Boolnean - Default False
+@bLink : Add link to created actionable badges 
 
 Example : 
 
@@ -16,9 +16,9 @@ Without bPill Props
 
 <Badge bStyle="light">10</Badge>
 
-With bPill Props
+With bPill & bLink Props
 
-<Badge bStyle="light" bPill >10</Badge>
+<Badge bStyle="light" bPill bLink="http://google.com" >10</Badge>
 
 
 *************************************************************************************************/
